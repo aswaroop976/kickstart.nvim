@@ -182,7 +182,6 @@ do
   --  See `:help vim.keymap.set()`
   vim.keymap.set('i', 'kj', '<Esc>')
   -- vim.keymap.set('n', '-', '<Cmd>Oil<CR>', { desc = 'Open Parent Directory' })
-  -- vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
   -- Clear highlights on search when pressing <Esc> in normal mode
   --  See `:help hlsearch`
@@ -392,14 +391,14 @@ do
       comments = { italic = false }, -- Disable italics in comments
     },
   }
-  vim.pack.add({
+  vim.pack.add {
     {
-      src = "https://github.com/rose-pine/neovim",
-      name = "rose-pine",
+      src = 'https://github.com/rose-pine/neovim',
+      name = 'rose-pine',
     },
-  })
-  require("rose-pine").setup()
-  vim.cmd("colorscheme rose-pine-moon")
+  }
+  require('rose-pine').setup()
+  vim.cmd 'colorscheme rose-pine-moon'
 
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
@@ -810,7 +809,7 @@ do
     },
     -- You can also specify external formatters in here.
     formatters_by_ft = {
-      -- rust = { 'rustfmt' },
+      rust = { 'rustfmt' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
@@ -981,10 +980,10 @@ do
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug'
-  -- require 'kickstart.plugins.indent_line'
-  -- require 'kickstart.plugins.lint'
+  require 'kickstart.plugins.indent_line'
+  require 'kickstart.plugins.lint'
   -- require 'kickstart.plugins.autopairs'
-   require 'kickstart.plugins.neo-tree'
+  require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -994,4 +993,8 @@ do
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=4 sts=4 sw=4 et
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
